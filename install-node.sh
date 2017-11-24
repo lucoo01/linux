@@ -8,3 +8,5 @@ source ~/.bashrc
 #查看所有node版本
 #nvm ls-remote 
 nvm install v6.12.0
+
+nvm use v6.12.0
