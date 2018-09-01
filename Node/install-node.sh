@@ -10,3 +10,6 @@ source ~/.bashrc
 nvm install v6.12.0
 
 nvm use v6.12.0
+
+# 当前稳定版本是
+v8.11.4   (Latest LTS: Carbon)
