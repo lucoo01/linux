@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({
 
 
 var fs = require('fs');
-var PORT = 9005;
+var PORT = 8701;
 
 function writeFile(file, str) {
 
@@ -22,7 +22,7 @@ function writeFile(file, str) {
 
 app.get('/killdiepid', function(req, res) {
 
-    process.exec("/root/kill_die_process.sh", function(error, stdout, stderr) {
+    process.exec("source /root/kill_die_process.sh", function(error, stdout, stderr) {
 
         if (error !== null) {
             console.log('exec error: ' + error);
@@ -36,7 +36,7 @@ app.get('/killdiepid', function(req, res) {
 
 });
 
-app.all('/runcode', function(req, res, next) {
+app.all('/', function(req, res, next) {
 
     res.header("Access-Control-Allow-Origin", "*"); // 手机端的来源要如何控制
     res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
@@ -45,11 +45,17 @@ app.all('/runcode', function(req, res, next) {
     next();
 });
 
-app.post('/runcode', function(req, res) {
-    var lang = req.body.lang;
+app.get('/', function(req, res){
+    console.log("this is node get / ");
+
+    res.end("this is / path");
+});
+
+app.post('/', function(req, res) {
+
+    var lang = 'php';
     var code = req.body.code;
     var classname = req.body.classname;
-
 
 
     var langsuf = {
@@ -105,7 +111,7 @@ app.post('/runcode', function(req, res) {
         res.end('no support this language!!');
     }
 
-    var filePath = '/root/soft/playground/';
+    var filePath = '/code/';
     var file, filename;
     if (lang == 'java') {
         classname = classname.replace(/^\s+|\s+$/g, '');
