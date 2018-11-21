@@ -1,5 +1,9 @@
 #在CentOS 下使用nvm安装Node.js
 
+
+#开源项目地址
+# https://github.com/creationix/nvm
+
 mkdir -p ~/soft/nvm;cd ~/soft/nvm
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
 
