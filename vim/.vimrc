@@ -12,3 +12,6 @@ autocmd InsertEnter * se cul
 set showcmd
 set foldenable
 set foldmethod=manual
+set ts=4
+set expandtab
+set autoindent
