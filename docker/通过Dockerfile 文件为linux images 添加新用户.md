@@ -1,8 +1,8 @@
 ### 要求：
-（１）增加一个新用户，名为 loen
-（２）让这个用户有root权限
-（３）设置其密码为 mypasswd123
-（４）container启动后以loen登录,并且直接到loen的home目录下
+ - 增加一个新用户，名为 loen
+ - 让这个用户有root权限
+ - 设置其密码为 mypasswd123
+ - container启动后以loen登录,并且直接到loen的home目录下
 
 ---
 
