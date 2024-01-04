@@ -44,3 +44,10 @@ atop -r /var/log/atop/atop_20240104 -b 14:10 -e 14:20
 - **详细分析**：你可以通过查看不同的资源（CPU、内存等）来对进程进行更详细的分析。
 
 如果你的系统上还没有安装`atop`，那么你可能无法回溯到在安装之前的数据。因此，如果你希望未来能够进行此类分析，安装并开始运行`atop`是一个好的选择。
+
+
+# 配置文件，默认10分钟采集一次数据
+$ cat /etc/sysconfig/atop
+
+# interval (default 10 minutes)
+LOGINTERVAL=600
